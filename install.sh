@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 add_rc () {
     if [[ -e $1 ]]; then

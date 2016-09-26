@@ -1,11 +1,14 @@
 package L;
 
-use List::Util qw(max min all any shuffle);
+use strict;
+use warnings;
+
+use List::Util qw(max min shuffle);
 use bignum;
 
 require Exporter;
 our @ISA = qw(Exporter);
-our @EXPORT = qw(sum max min all any shuffle mean median);
+our @EXPORT = qw(sum max min shuffle percentile mean median q1 q3 uniq);
 
 sub sum {
     return List::Util::sum0(@_);
@@ -14,22 +17,32 @@ sub sum {
 sub mean {
     my $count = @_;
     return 0 if not $count;
-    $sum = sum(@_);
-    return $sum / $count;
+    my $total = sum(@_);
+    return $total / $count;
+}
+
+sub percentile {
+    my @list = @_;
+    my $q = pop @list;
+    my @sorted_list = sort { $a <=> $b } @list;
+    return $sorted_list[sprintf("%.0f", ($q * $#sorted_list / 100))];
 }
 
 sub median {
-    my $count = @_;
-    my @list = sort { $a <=> $b } @_;
-    if ($count == 0) {
-        return 0;
-    }
-    elsif ($count % 2 == 1) {
-        return $list[($count - 1) / 2];
-    }
-    else {
-        return ($list[$count / 2 - 1] + $list[$count / 2]) / 2;
-    }
+    return percentile(@_, 50);
+}
+
+sub q1 {
+    return percentile(@_, 25);
+}
+
+sub q3 {
+    return percentile(@_, 75);
+}
+
+sub uniq {
+    my %seen;
+    return grep { !$seen{$_}++ } @_;
 }
 
 1;
