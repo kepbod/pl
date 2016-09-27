@@ -1,5 +1,7 @@
 # pl -- Perl One Liners
 
+[![Build Status](https://travis-ci.org/kepbod/pl.svg?branch=master)](https://travis-ci.org/kepbod/pl)
+
 *A perl package useful for perl one liners*
 
 ```
