@@ -6,5 +6,4 @@ before_script:
 script:
   - git clone https://github.com/kepbod/pl.git $HOME/pl
   - export PERLLIB="$HOME/pl:$PERLLIB"
-  - alias pl="perl -ML"
   - bash test.sh
