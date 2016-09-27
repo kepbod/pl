@@ -1,10 +1,10 @@
 language: perl
 perl:
-  - 5.18
+  - "5.22"
+  - "5.20"
+  - "5.18"
 
 before_script:
-  - sudo apt-get update
-  - sudo apt-get install perl
   - curl -L "https://github.com/kward/shunit2/archive/source.tar.gz" | tar zx
 
 script:
