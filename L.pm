@@ -10,10 +10,12 @@ require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT = qw(sum max min shuffle percentile mean median q1 q3 uniq);
 
+# $sum = sum @lst
 sub sum {
     return List::Util::sum0(@_);
 }
 
+# $mean = mean @lst
 sub mean {
     my $count = @_;
     return 0 if not $count;
@@ -21,6 +23,7 @@ sub mean {
     return $total / $count;
 }
 
+# $percentile = percentile @lst,$p
 sub percentile {
     my @list = @_;
     my $q = pop @list;
@@ -28,18 +31,22 @@ sub percentile {
     return $sorted_list[sprintf("%.0f", ($q * $#sorted_list / 100))];
 }
 
+# $median = median @lst
 sub median {
     return percentile(@_, 50);
 }
 
+# $q1 = q1 @lst
 sub q1 {
     return percentile(@_, 25);
 }
 
+# $q3 = q3 @lst
 sub q3 {
     return percentile(@_, 75);
 }
 
+# @uniq = uniq @list
 sub uniq {
     my %seen;
     return grep { !$seen{$_}++ } @_;
