@@ -1,6 +1,8 @@
 language: bash
 
 before_script:
+  - sudo apt-get update
+  - sudo apt-get install perl
   - curl -L "https://github.com/kward/shunit2/archive/source.tar.gz" | tar zx
 
 script:
