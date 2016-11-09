@@ -1,13 +1,12 @@
-language: perl
-perl:
-  - "5.22"
-  - "5.20"
-  - "5.18"
+language: bash
 
 before_script:
   - curl -L "https://github.com/kward/shunit2/archive/source.tar.gz" | tar zx
 
-script:
+install:
   - git clone https://github.com/kepbod/pl.git $HOME/pl
   - export PERLLIB="$HOME/pl:$PERLLIB"
+
+
+script:
   - bash test.sh
