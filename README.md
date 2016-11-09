@@ -8,7 +8,7 @@
 alias pl="perl -ML"
 ```
 
-If you love ivim, welcome to [buy me a :coffee:](https://www.paypal.me/kepbod). Thx!!!
+If you love ivim, welcome to [buy me a cup of coffee :coffee:](https://www.paypal.me/kepbod). Thx!!!
 
 
 ## Install
