@@ -8,7 +8,7 @@
 alias pl="perl -ML"
 ```
 
-If you love ivim, welcome to [buy me a coffee](https://www.paypal.me/kepbod). Thx!!!
+If you love ivim, welcome to [buy me a :coffee:](https://www.paypal.me/kepbod). Thx!!!
 
 
 ## Install
@@ -21,61 +21,61 @@ bash install.sh
 
 ## Document
 
-1. Calculate the sum of a list.
+1 Calculate the sum of a list.
 ```
 pl -e '@a=(1..5);print sum @a'
 # out => 15
 ```
 
-2. Calculate the maximum of a list.
+2 Calculate the maximum of a list.
 ```
 pl -e '@a=(1..5);print max @a'
 # out => 5
 ```
 
-3. Calculate the minimum of a list.
+3 Calculate the minimum of a list.
 ```
 pl -e '@a=(1..5);print min @a'
 # out => 1
 ```
 
-4. Calculate the percentile of a list.
+4 Calculate the percentile of a list.
 ```
 pl -e '@a=(0..100);print percentile @a,30'
 # out => 30
 ```
 
-5. Calculate the mean of a list.
+5 Calculate the mean of a list.
 ```
 pl -e '@a=(1,2,3,3,4,5,6,7,14);print mean @a'
 # out => 5
 ```
 
-6. Calculate the median of a list.
+6 Calculate the median of a list.
 ```
 pl -e '@a=(1,2,3,3,4,5,6,7,14);print median @a'
 # out => 4
 ```
 
-7. Calculate the Q1 of a list.
+7 Calculate the Q1 of a list.
 ```
 pl -e '@a=(0..100);print q1 @a'
 # out => 25
 ```
 
-8. Calculate the Q3 of a list.
+8 Calculate the Q3 of a list.
 ```
 pl -e '@a=(0..100);print q3 @a'
 # out => 75
 ```
 
-9. Fetch unique entries from a list.
+9 Fetch unique entries from a list.
 ```
 pl -e '@a=(1,2,3,3,4);@b=uniq @a;$,="\t";print @b'
 # out => 1 2 3 4
 ```
 
-10. Calculate the standard deviation of a list.
+10 Calculate the standard deviation of a list.
 ```
 pl -e '@a=(1..10);printf("%.3f", sd @a)'
 # out => 3.028
