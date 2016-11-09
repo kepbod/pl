@@ -50,7 +50,7 @@ testUniq () {
 }
 
 testSd () {
-    sd=`perl -ML -e '@a=(1..10);printf( "%.3f", sd @a )'`
+    sd=`perl -ML -e '@a=(1..10);printf("%.3f", sd @a)'`
     assertEquals $sd 3.028
 }
 
