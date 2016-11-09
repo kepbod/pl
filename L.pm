@@ -8,7 +8,7 @@ use bignum;
 
 require Exporter;
 our @ISA = qw(Exporter);
-our @EXPORT = qw(sum max min shuffle percentile mean median q1 q3 uniq);
+our @EXPORT = qw(sum max min shuffle percentile mean median q1 q3 uniq sd);
 
 # $sum = sum @lst
 sub sum {
@@ -46,10 +46,18 @@ sub q3 {
     return percentile(@_, 75);
 }
 
-# @uniq = uniq @list
+# @uniq = uniq @lst
 sub uniq {
     my %seen;
     return grep { !$seen{$_}++ } @_;
+}
+
+# $sd = std @lst
+sub sd {
+    my $mean = mean(@_);
+    my $total = 0;
+    $total += ($_ - $mean)**2 for @_;
+    return sqrt($total / $#_);
 }
 
 1;

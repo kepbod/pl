@@ -49,4 +49,9 @@ testUniq () {
     assertEquals $uniq2 1342
 }
 
+testSd () {
+    sd=`perl -ML -e '@a=(1..10);printf( "%.3f", sd @a )'`
+    assertEquals $sd 3.028
+}
+
 . shunit2-source/2.1.6/src/shunit2
