@@ -77,8 +77,14 @@ pl -e '@a=(1,2,3,3,4);@b=uniq @a;$,="\t";print @b'
 
 10 Calculate the standard deviation of a list.
 ```
-pl -e '@a=(1..10);printf("%.3f", sd @a)'
+pl -e '@a=(1..10);printf("%.3f",sd @a)'
 # out => 3.028
+```
+
+11 Calculate the standard score (Z score) of a list.
+```
+pl -e '@a=(-5,-4,-2,-1,-1,0,2,2,3,3,4);@z=zscore @a;printf "%0.3f",$z[0]'
+# out => -1.707
 ```
 
 ## Useful resources for perl one liners
@@ -96,10 +102,13 @@ pl -e '@a=(1..10);printf("%.3f", sd @a)'
 
 ### Useful variables (http://perldoc.perl.org/perlvar.html)
 
+* `$_`: default input and pattern-searching space
 * `$"`: list separator in double-quoted context
-* `$.`: current line number
-* `$,`: output field separator for the print operator
+* `$.` or `$NR`: current line number
+* `$,` or `$OFS`: output field separator for the print operator
+* `$/` or `$RS`: input record separator, newline by default
+* `$\\` or `$ORS`: output record separator for the print operator
 * `$ARGV`: the name of the current file
 
 ## License
-Copyright (C) 2016 Xiao-Ou Zhang. See the [LICENSE](https://github.com/kepbod/pl/blob/master/LICENSE) file for license rights and limitations (MIT).
+Copyright (C) 2016-2017 Xiao-Ou Zhang. See the [LICENSE](https://github.com/kepbod/pl/blob/master/LICENSE) file for license rights and limitations (MIT).

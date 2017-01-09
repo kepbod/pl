@@ -54,4 +54,9 @@ testSd () {
     assertEquals $sd 3.028
 }
 
+testZscore () {
+    zscore=`perl -ML -e '@a=(-5,-4,-2,-1,-1,0,2,2,3,3,4);@z=zscore @a;printf "%0.3f",$z[0]'`
+    assertEquals $zscore -1.707
+}
+
 . shunit2-source/2.1.6/src/shunit2
