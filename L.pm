@@ -8,7 +8,7 @@ use bignum;
 
 require Exporter;
 our @ISA = qw(Exporter);
-our @EXPORT = qw(sum max min shuffle percentile mean median q1 q3 uniq sd zscore);
+our @EXPORT = qw(sum max min shuffle percentile mean median q1 q3 uniq sd zscore cor);
 
 # $sum = sum @lst
 sub sum {
@@ -65,6 +65,21 @@ sub zscore {
     my $mean = mean(@_);
     my $sd = sd(@_);
     return map {($_ - $mean)/$sd} @_;
+}
+
+# $cor=cor \@lst1,\@lst2
+sub cor {
+    my @lst1 = @{$_[0]};
+    my @lst2 = @{$_[1]};
+    my $mean1 = mean(@lst1);
+    my $mean2 = mean(@lst2);
+    my ($cov_xy, $cov_x, $cov_y) = (0, 0, 0);
+    for my $num (0..$#lst1) {
+        $cov_xy += ($lst1[$num] - $mean1) * ($lst2[$num] - $mean2);
+        $cov_x += ($lst1[$num] - $mean1) ** 2;
+        $cov_y += ($lst2[$num] - $mean2) ** 2;
+    }
+    return $cov_xy / (sqrt($cov_x) * sqrt($cov_y))
 }
 
 1;

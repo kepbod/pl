@@ -87,6 +87,12 @@ pl -e '@a=(-5,-4,-2,-1,-1,0,2,2,3,3,4);@z=zscore @a;printf "%0.3f",$z[0]'
 # out => -1.707
 ```
 
+12 Calculate the pearson correlation coefficient between two lists.
+```
+pl -e '@a=(100,82,89,0);@b=(26,10,5,1);printf "%0.3f", cor(\@a,\@b)'
+# out => 0.677
+```
+
 ## Useful resources for perl one liners
 
 ### Useful options (http://perldoc.perl.org/perlrun.html)

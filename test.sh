@@ -59,4 +59,9 @@ testZscore () {
     assertEquals $zscore -1.707
 }
 
+testCor () {
+    cor=`perl -ML -e '@a=(100,82,89,0);@b=(26,10,5,1);printf "%0.3f", cor(\@a,\@b)'`
+    assertEquals $cor 0.677
+}
+
 . shunit2-source/2.1.6/src/shunit2
