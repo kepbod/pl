@@ -95,10 +95,10 @@ pl -e '@a=(100,82,89,0);@b=(26,10,5,1);printf "%0.3f", cor(\@a,\@b)'
 
 ## Useful resources for perl one liners
 
-### Useful options (http://perldoc.perl.org/perlrun.html)
+### [Useful options](http://perldoc.perl.org/perlrun.html)
 
 * `-a`: turns on autosplit mode (split command to the `@F` array) when used with a `-n` or `-p`
-* `-l`: enables automatic line-ending processing (1. chomps `$/` for each line; 2. assigns `$\\` after each `print`)
+* `-l`: enables automatic line-ending processing (1. chomps `$/` for each line; 2. assigns `$\` after each `print`)
 * `-n`: reads each line from your file(s) via a loop
 * `-e`: enters one line of program
 
@@ -106,17 +106,17 @@ pl -e '@a=(100,82,89,0);@b=(26,10,5,1);printf "%0.3f", cor(\@a,\@b)'
 * `-F`: specifies the pattern to split on for `-a`
 * `-i`: processes file(s) in-place
 
-### Useful variables (http://perldoc.perl.org/perlvar.html)
+### [Useful variables](http://perldoc.perl.org/perlvar.html)
 
 * `$_`: default input and pattern-searching space
 * `$"`: list separator in double-quoted context
 * `$.` or `$NR`: current line number
 * `$,` or `$OFS`: output field separator for the print operator
 * `$/` or `$RS`: input record separator, newline by default
-* `$\\` or `$ORS`: output record separator for the print operator
+* `$\` or `$ORS`: output record separator for the print operator
 * `$ARGV`: the name of the current file
 
-### Useful blocks (http://perldoc.perl.org/perlmod.html#BEGIN%2c-UNITCHECK%2c-CHECK%2c-INIT-and-END)
+### [Useful blocks](http://perldoc.perl.org/perlmod.html#BEGIN%2c-UNITCHECK%2c-CHECK%2c-INIT-and-END)
 
 * `BEGIN{}`: A `BEGIN` code block is executed as soon as possible, that is, the moment it is completely defined.
 * `END{}`: An `END` code block is executed as late as possible, that is, after perl has finished running the program and just before the interpreter is being exited.
