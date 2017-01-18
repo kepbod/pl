@@ -116,5 +116,10 @@ pl -e '@a=(100,82,89,0);@b=(26,10,5,1);printf "%0.3f", cor(\@a,\@b)'
 * `$\\` or `$ORS`: output record separator for the print operator
 * `$ARGV`: the name of the current file
 
+### Useful blocks (http://perldoc.perl.org/perlmod.html#BEGIN%2c-UNITCHECK%2c-CHECK%2c-INIT-and-END)
+
+* `BEGIN{}`: A `BEGIN` code block is executed as soon as possible, that is, the moment it is completely defined.
+* `END{}`: An `END` code block is executed as late as possible, that is, after perl has finished running the program and just before the interpreter is being exited.
+
 ## License
 Copyright (C) 2016-2017 Xiao-Ou Zhang. See the [LICENSE](https://github.com/kepbod/pl/blob/master/LICENSE) file for license rights and limitations (MIT).
