@@ -4,7 +4,6 @@ use strict;
 use warnings;
 
 use List::Util qw(max min shuffle);
-use bignum;
 
 require Exporter;
 our @ISA = qw(Exporter);
