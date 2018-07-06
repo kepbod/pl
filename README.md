@@ -81,13 +81,19 @@ pl -e '@a=(1..10);printf("%.3f",sd @a)'
 # out => 3.028
 ```
 
-11 Calculate the standard score (Z score) of a list.
+11 Calculate the coefficient of variation of a list.
+```
+pl -e '@a=(-5,-4,7.5,8.7,3.4,9.4,0.8,1.5,2.6,0.9,0.6,9.4,8.4,6.6,9.4);printf("%.3f", cv @a)'
+# out => 1.215
+```
+
+12 Calculate the standard score (Z score) of a list.
 ```
 pl -e '@a=(-5,-4,-2,-1,-1,0,2,2,3,3,4);@z=zscore @a;printf "%0.3f",$z[0]'
 # out => -1.707
 ```
 
-12 Calculate the pearson correlation coefficient between two lists.
+13 Calculate the pearson correlation coefficient between two lists.
 ```
 pl -e '@a=(100,82,89,0);@b=(26,10,5,1);printf "%0.3f", cor(\@a,\@b)'
 # out => 0.677

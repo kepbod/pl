@@ -54,6 +54,11 @@ testSd () {
     assertEquals $sd 3.028
 }
 
+testCv () {
+    cv=`perl -ML -e '@a=(-5,-4,7.5,8.7,3.4,9.4,0.8,1.5,2.6,0.9,0.6,9.4,8.4,6.6,9.4);printf("%.3f", cv @a)'`
+    assertEquals $cv 1.215
+}
+
 testZscore () {
     zscore=`perl -ML -e '@a=(-5,-4,-2,-1,-1,0,2,2,3,3,4);@z=zscore @a;printf "%0.3f",$z[0]'`
     assertEquals $zscore -1.707

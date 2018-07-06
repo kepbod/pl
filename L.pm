@@ -59,6 +59,13 @@ sub sd {
     return sqrt($total / $#_);
 }
 
+# $cv = cv @lst
+sub cv {
+    my $mean = mean(@_);
+    my $sd = sd(@_);
+    return $sd / $mean
+}
+
 # @zscore = zscore @lst
 sub zscore {
     my $mean = mean(@_);
