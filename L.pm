@@ -7,7 +7,7 @@ use List::Util qw(max min shuffle);
 
 require Exporter;
 our @ISA = qw(Exporter);
-our @EXPORT = qw(sum max min shuffle percentile mean median q1 q3 uniq sd zscore cor);
+our @EXPORT = qw(sum max min shuffle percentile mean median q1 q3 uniq sd cv zscore cor);
 
 # $sum = sum @lst
 sub sum {
